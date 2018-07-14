@@ -41,7 +41,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 13, 25 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 scale = Vector2( 1.1875, 1.125 )
 input_pickable = false
