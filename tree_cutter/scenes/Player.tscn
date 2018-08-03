@@ -7,6 +7,9 @@
 
 [node name="Player" type="Node2D"]
 
+scale = Vector2( 1.5, 1.5 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Head" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
