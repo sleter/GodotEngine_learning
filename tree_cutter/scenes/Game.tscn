@@ -1,16 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://sprites/skybox_sideHills.png" type="Texture" id=1]
-[ext_resource path="res://sprites/dirt_grass.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Trunk.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/skybox_sideHills.png" type="Texture" id=3]
+[ext_resource path="res://sprites/dirt_grass.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
+
+script = ExtResource( 1 )
+trunk_scene = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="." index="0"]
 
 position = Vector2( 249.243, 642.13 )
 scale = Vector2( 2.4452, 2.63034 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="Ground" type="Node2D" parent="." index="1"]
 
@@ -24,20 +29,25 @@ __meta__ = {
 
 [node name="Tile" type="Sprite" parent="Ground" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Tile2" type="Sprite" parent="Ground" index="1"]
 
 position = Vector2( -128, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Tile3" type="Sprite" parent="Ground" index="2"]
 
 position = Vector2( 128, 0 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
-[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 624.895, 869.035 )
+
+[node name="FirstTrunkPosition" type="Position2D" parent="." index="3"]
+
+position = Vector2( 352, 960 )
+_sections_unfolded = [ "Transform" ]
 
 

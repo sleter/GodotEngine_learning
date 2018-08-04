@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Trunk.gd" type="Script" id=1]
+[ext_resource path="res://sprites/axe_iron.png" type="Texture" id=2]
+[ext_resource path="res://sprites/trunk_mid.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 48.1981
+
+[node name="Trunk" type="Node2D" index="0"]
+
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LeftAxe" type="Area2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -80, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="LeftAxe" index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftAxe" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="RightAxe" type="Area2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 80, 0 )
+scale = Vector2( -1, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="RightAxe" index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightAxe" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 3 )
+
+
